@@ -468,6 +468,9 @@ footer .hexline {
   font-weight: 600;
   color: var(--honey-comb);
   text-decoration: none;
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }
 
 @media (max-width: 400px) {

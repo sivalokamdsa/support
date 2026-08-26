@@ -1,0 +1,480 @@
+:root {
+  --honey-dark: #3b2612;
+  --honey-comb: #c97a26;
+  --honey-gold: #e8a73d;
+  --honey-cream: #fbf3e3;
+  --honey-maroon: #8b3a2f;
+  --honey-line: #e4c99a;
+  --card-bg: #fffdf8;
+  --max-w: 760px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--honey-cream);
+  color: var(--honey-dark);
+  font-family: "Noto Sans Telugu", "Poppins", sans-serif;
+  line-height: 1.75;
+  font-size: 17px;
+}
+h1,
+h2,
+h3 {
+  font-family: "Noto Serif Telugu", serif;
+  color: var(--honey-dark);
+  margin: 0 0 0.4em 0;
+}
+a {
+  color: var(--honey-maroon);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Honeycomb background texture */
+.comb-bg {
+  background-color: var(--honey-cream);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(201, 122, 38, 0.13) 1.5px,
+    transparent 1.6px
+  );
+  background-size: 26px 26px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  padding: 72px 20px 56px;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at 50% -10%,
+      rgba(232, 167, 61, 0.55),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #2a1a0c 0%, #3b2612 55%, #4a2e14 100%);
+  color: var(--honey-cream);
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='96' viewBox='0 0 84 96'%3E%3Cpath d='M42 0 L84 24 L84 72 L42 96 L0 72 L0 24 Z' fill='none' stroke='%23E8A73D' stroke-opacity='0.14' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 84px 96px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.hero-eyebrow {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 11.5px;
+  color: var(--honey-gold);
+  margin-bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--honey-gold);
+}
+.hero h1 {
+  font-size: clamp(42px, 12vw, 64px);
+  color: #fbf3e3;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  margin-bottom: 10px;
+}
+.hero p.tag {
+  font-size: 16.5px;
+  color: #e9d9be;
+  max-width: 480px;
+  margin: 0 auto 26px;
+  font-weight: 500;
+}
+.hero-drop {
+  width: 56px;
+  height: 64px;
+  margin: 0 auto 22px;
+  background: var(--honey-gold);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  position: relative;
+  box-shadow: 0 8px 26px rgba(232, 167, 61, 0.35);
+}
+.hero-drop::after {
+  content: "తే";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Serif Telugu", serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #3b2612;
+}
+
+/* ---------- NAV ---------- */
+.toc-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(251, 243, 227, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--honey-line);
+}
+.toc {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  scrollbar-width: none;
+}
+.toc::-webkit-scrollbar {
+  display: none;
+}
+.toc a {
+  flex: 0 0 auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--honey-maroon);
+  background: #fff;
+  border: 1px solid var(--honey-line);
+  padding: 8px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.toc a:active,
+.toc a:focus-visible {
+  background: var(--honey-gold);
+  color: #fff;
+}
+
+/* ---------- LAYOUT ---------- */
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+section {
+  padding: 46px 0;
+}
+section + section {
+  border-top: 1px dashed var(--honey-line);
+}
+
+.section-eyebrow {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--honey-comb);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+h2.section-title {
+  font-size: clamp(24px, 6vw, 30px);
+  font-weight: 700;
+}
+h2.section-title .num {
+  color: var(--honey-comb);
+  margin-right: 8px;
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+.lede {
+  font-size: 18.5px;
+  color: #4a2e14;
+  font-weight: 500;
+}
+
+blockquote {
+  margin: 26px 0;
+  padding: 20px 22px;
+  background: var(--card-bg);
+  border-left: 4px solid var(--honey-comb);
+  border-radius: 2px;
+  font-family: "Noto Serif Telugu", serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--honey-maroon);
+  position: relative;
+}
+blockquote cite {
+  display: block;
+  margin-top: 8px;
+  font-family: "Noto Sans Telugu", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a7154;
+  font-style: normal;
+}
+
+/* nutrition table */
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 1px solid var(--honey-line);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  font-size: 15px;
+}
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--honey-line);
+}
+th {
+  background: var(--honey-comb);
+  color: #fff;
+  font-weight: 600;
+  font-size: 13.5px;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+td:last-child,
+th:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--honey-maroon);
+}
+
+/* ---------- RECIPE CARDS ---------- */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 20px;
+}
+@media (min-width: 600px) {
+  .recipe-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.recipe-card {
+  background: var(--card-bg);
+  border: 1px solid var(--honey-line);
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.recipe-card::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 64px;
+  height: 74px;
+  background: var(--honey-cream);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  opacity: 0.6;
+}
+.recipe-card h3 {
+  font-size: 19px;
+  color: var(--honey-maroon);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.recipe-card h3 .hex {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 25px;
+  background: var(--honey-comb);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.recipe-card h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #a08256;
+  margin: 14px 0 6px;
+  font-weight: 600;
+}
+.recipe-card ul.ingredients {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14.5px;
+}
+.recipe-card ul.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 4px 0;
+  border-bottom: 1px dotted var(--honey-line);
+}
+.recipe-card ul.ingredients li:last-child {
+  border-bottom: none;
+}
+.recipe-card .method {
+  font-size: 14.5px;
+  color: #4a2e14;
+}
+.recipe-card .benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.recipe-card .benefits li {
+  padding: 3px 0 3px 20px;
+  position: relative;
+}
+.recipe-card .benefits li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--honey-comb);
+  font-size: 12px;
+  top: 5px;
+}
+
+/* ---------- REMEDY LIST ---------- */
+.remedy-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  counter-reset: remedy;
+}
+.remedy-list li {
+  counter-increment: remedy;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--honey-line);
+  font-size: 15.5px;
+}
+.remedy-list li:last-child {
+  border-bottom: none;
+}
+.remedy-hex {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 34px;
+  background: linear-gradient(160deg, var(--honey-gold), var(--honey-comb));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.remedy-hex::before {
+  content: counter(remedy);
+}
+
+.remedy-group-title {
+  margin: 34px 0 6px;
+  font-family: "Noto Serif Telugu", serif;
+  font-size: 17.5px;
+  color: var(--honey-maroon);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.remedy-group-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--honey-line);
+}
+
+/* ---------- BEAUTY SECTION ---------- */
+.beauty {
+  background: linear-gradient(180deg, #fff9ef, var(--honey-cream));
+}
+.beauty-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.beauty-list li {
+  padding: 12px 0 12px 26px;
+  position: relative;
+  border-bottom: 1px dashed var(--honey-line);
+  font-size: 15px;
+}
+.beauty-list li:last-child {
+  border-bottom: none;
+}
+.beauty-list li::before {
+  content: "❀";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: var(--honey-maroon);
+  font-size: 13px;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 40px 20px 56px;
+  color: #8a7154;
+  font-size: 13px;
+}
+footer .hexline {
+  width: 36px;
+  height: 41px;
+  margin: 0 auto 16px;
+  background: var(--honey-comb);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  opacity: 0.5;
+}
+
+/* Back to top */
+.top-link {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--honey-comb);
+  text-decoration: none;
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+  .hero {
+    padding: 56px 16px 44px;
+  }
+}
